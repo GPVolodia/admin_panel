@@ -17,26 +17,33 @@ class MenuList extends Component {
         this.setState({activeList: param});
     }
 
+    returnActiveItemList(param) {
+       let elementClass = '';
+       if (this.state.activeList === param) {
+           elementClass = 'active';
+       }
+       return elementClass;
+    }
+
     render() {
         return (
             <div className="menu-place row">
-                <div className="menu-title">Меню</div>
                 <ul className="menu-list">
-                    <li className="meu-item">
-                        <Link to='/some_page' activeClassName='route--active'>
-                            Головна сторінка
-                        </Link>
-                    </li>
-                    <li className="menu-item">
-                        <Link to='/counter' activeClassName='route--active'>
-                            Користувачі
-                        </Link>
-                    </li>
-                    <li className="meu-item">
-                        <Link to='/some_page' activeClassName='route--active'>
-                            Ціни
-                        </Link>
-                    </li>
+                    <Link to='/main_page' activeClassName='route--active'>
+                        <li className={'menu-item ' + this.returnActiveItemList(1)} onClick={() => {this.setActiveItemList(1)}}>
+                            <i className="fa fa-home"/> Головна сторінка
+                        </li>
+                    </Link>
+                    <Link to='/counter' activeClassName='route--active'>
+                        <li className={'menu-item ' + this.returnActiveItemList(2)} onClick={() => {this.setActiveItemList(2)}}>
+                            <i className="fa fa-user"/> Користувачі
+                        </li>
+                    </Link>
+                    <Link to='/some_page' activeClassName='route--active'>
+                        <li className={'menu-item ' + this.returnActiveItemList(3)} onClick={() => {this.setActiveItemList(3)}}>
+                            <i className="fa fa-dollar"/> Ціни
+                        </li>
+                    </Link>
                 </ul>
             </div>
         )

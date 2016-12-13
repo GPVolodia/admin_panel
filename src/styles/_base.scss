@@ -10,3 +10,11 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
+.row {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.col{
+  margin: 0px !important;
+  padding: 0px !important;
+}

@@ -10,6 +10,42 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
+@import './base';
 .menu-place {
-  background-color: lightyellow;
+  position: relative;
+  background-color: lightgray;
+  font-family: Roboto;
+  background-color: #3e3e3e;
+  min-height: 100vh;
+  a {
+    text-decoration: none;
+  }
+  .menu-item {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-left: 30px;
+    min-height: 50px;
+    padding-top: 15px;
+    cursor: pointer;
+    color: grey;
+    &:hover {
+      background-color: #626262;
+      color: greenyellow;
+    }
+  }
+  .menu-item::after {
+    content: '\F054';
+    font-family: FontAwesome;
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+  }
+  .active {
+    background-color: greenyellow;
+    color: black;
+    &:hover {
+      background-color: greenyellow;
+      color: black;
+    }
+  }
 }

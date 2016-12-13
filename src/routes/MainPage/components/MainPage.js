@@ -2,9 +2,9 @@ import React from 'react'
 
 export const Counter = (props) => (
   <div style={{ margin: '0 auto' }} >
-    <h2>Counter: {props.counter}</h2>
+    Головна сторінка йопта <br />
     <button className='btn btn-default' onClick={props.increment}>
-      Increment 21
+      Increment 21dasdsa
     </button>
     {' '}
     <button className='btn btn-default' onClick={props.doubleAsync}>
