@@ -2,29 +2,28 @@
  * Created by root on 13.12.16.
  */
 import React, { Proptypes, Component } from 'react'
-import { IndexLink, Link } from 'react-router'
-import '../../styles/MenuList.scss'
+import '../../styles/Header.scss'
 
-class MenuList extends Component {
+class Header extends Component {
     render() {
         return (
-            <div className="menu-place row">
-                <div className="menu-title">Меню</div>
-                <ul className="menu-list">
-                    <li className="menu-item">
-                        <Link to='/counter' activeClassName='route--active'>
-                            Користувачі
-                        </Link>
-                    </li>
-                    <li className="meu-item">
-                        <Link to='/some_page' activeClassName='route--active'>
-                            Ціни
-                        </Link>
-                    </li>
-                </ul>
+            <div className="header-place row valign-wrapper">
+                <div className="header-title col s3 m3 l3"><img src="img/site_logo.jpg"/></div>
+                <div className="header-actions col s9 m9 l9 right-align">
+                    <ul>
+                        <li className="header-item-action">
+                            <i className="fa fa-user"/>
+                            Мій профіль
+                        </li>
+                        <li className="header-item-action">
+                            <i className="fa fa-sign-in"/>
+                            Увійти
+                        </li>
+                    </ul>
+                </div>
             </div>
         )
     }
 }
 
-export default MenuList
+export default Header

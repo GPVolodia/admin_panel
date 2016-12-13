@@ -114,6 +114,7 @@
   "devDependencies": {
     "babel-eslint": "^7.1.0",
     "babel-plugin-istanbul": "^3.0.0",
+    "babel-preset-react-hmre": "^1.1.1",
     "chai": "^3.4.1",
     "chai-as-promised": "^6.0.0",
     "chai-enzyme": "^0.6.1",
@@ -135,6 +136,7 @@
     "karma-mocha-reporter": "^2.0.0",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-webpack-with-fast-source-maps": "^1.9.2",
+    "materialize-css": "^0.97.8",
     "mocha": "^3.0.1",
     "nodemon": "^1.10.2",
     "phantomjs-prebuilt": "^2.1.12",
@@ -142,6 +144,7 @@
     "redbox-react": "^1.2.10",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0",
+    "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2"
   }

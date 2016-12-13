@@ -10,6 +10,50 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
-.menu-place {
+.header-place {
+  background-color: gray;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  min-height: 55px;
+  margin: 0px;
+  img {
+    max-width: 70px;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+  .header-title {
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
 
+    font {
+      padding-left: 50px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .header-actions {
+    ul {
+      margin-right: 30px;
+    }
+    ul li {
+      font-size: 1em;
+      display: inline-block;
+      margin-left: 30px;
+      cursor: pointer;
+      padding-top: 8px;
+      .fa {
+        margin-right: 5px;
+        font-size: 1.1em;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    ul li:not(:last-child):after {
+      text-align: center;
+      border-right: solid 1px white;
+    }
+  }
 }
