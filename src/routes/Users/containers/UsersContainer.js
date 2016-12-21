@@ -1,24 +1,40 @@
 import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../modules/counter'
+import { setUsers } from '../modules/users'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
     wiring in the actions and state necessary to render a presentational
     component - in this case, the counter:   */
 
-import Counter from '../components/Counter'
+import Users from '../components/Users'
 
 /*  Object of action creators (can also be function that returns object).
     Keys will be passed as props to presentational components. Here we are
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  increment : () => increment(1),
-  doubleAsync
+  initialData() {
+    return (dispatch, getState) => {
+      fetch('http://api.eldorado.dev/v1/banners').then( response => {
+        if (response.status >= 200 && response.status < 300) {
+          let promise = response.json()
+          promise.then( result => {
+            if (result.data && result.data.length !==0) {
+              let usersArray = {
+                meta: result.meta,
+                data: result.data
+              }
+              dispatch(setUsers(usersArray))
+            }
+          })
+        }
+      })
+    }
+  },
 }
 
 const mapStateToProps = (state) => ({
-  counter : state.counter
+  children : state.users
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
@@ -35,4 +51,4 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default connect(mapStateToProps, mapDispatchToProps)(Users)
