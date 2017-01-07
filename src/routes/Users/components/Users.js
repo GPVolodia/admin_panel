@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react'
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui'
-
+import { IndexLink, Link } from 'react-router'
+import IconButton from 'material-ui/IconButton'
+import FontIcon from 'material-ui/FontIcon'
 /**
  * @TODO : Change fields according to database table, CRUD, design
  */
@@ -20,6 +22,21 @@ class Users extends Component {
     var usersList = this.props.children.data
     return (
       <div style={{ margin: '0 auto' }}>
+        <div className="user-settings">
+          <Link to={{pathname: '/users/add_user'}}>
+            <button label='Створити' className='btn btn-default'>
+              <i className="fa fa-plus"/>  Добавити користувача
+            </button>
+          </Link>
+        </div>
+        <br/>
+        <div className="user-settings">
+          <Link to={{pathname: '/users/delete_user'}}>
+            <button label='Створити' className='btn btn-default'>
+              <i className="fa fa-minus"/>  Видалити користувача
+            </button>
+          </Link>
+        </div>
         Список користувачів
         <table className="highlight responsive-table">
           <thead>

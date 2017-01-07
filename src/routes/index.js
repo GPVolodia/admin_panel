@@ -1,7 +1,10 @@
 // We only need to import the modules necessary for initial render
 import CoreLayout from '../layouts/CoreLayout/CoreLayout'
 import Home from './Home'
+
 import Users from './Users'
+import AddUser from './Users/AddUser'
+
 import MainPage from './MainPage'
 
 /*  Note: Instead of using JSX, we recommend using react-router
@@ -13,6 +16,8 @@ export const createRoutes = (store) => ({
   indexRoute  : Home,
   childRoutes : [
     Users(store),
+    AddUser(store),
+
     MainPage(store)
   ]
 })
