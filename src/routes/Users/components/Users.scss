@@ -1,0 +1,11 @@
+.user-table-row {
+
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+  }
+}
+.user-element-active {
+  background-color: darkgray;
+  cursor: pointer;
+}

@@ -4,6 +4,7 @@ import Home from './Home'
 
 import Users from './Users'
 import AddUser from './Users/AddUser'
+import EditUser from './Users/EditUser'
 
 import MainPage from './MainPage'
 
@@ -17,6 +18,7 @@ export const createRoutes = (store) => ({
   childRoutes : [
     Users(store),
     AddUser(store),
+    EditUser(store),
 
     MainPage(store)
   ]
