@@ -4,6 +4,7 @@ import { IndexLink, Link } from 'react-router'
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
 import './Users.scss'
+import { UserIsAuthenticated } from '../../Auth/Auth'
 /**
  * @TODO : Change fields according to database table, CRUD, design
  */
@@ -91,4 +92,4 @@ class Users extends Component {
   }
 }
 
-export default Users
+export default UserIsAuthenticated(Users)

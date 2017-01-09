@@ -2,6 +2,8 @@
 import CoreLayout from '../layouts/CoreLayout/CoreLayout'
 import Home from './Home'
 
+import Login from './Login'
+
 import Users from './Users'
 import AddUser from './Users/AddUser'
 import EditUser from './Users/EditUser'
@@ -19,6 +21,8 @@ export const createRoutes = (store) => ({
     Users(store),
     AddUser(store),
     EditUser(store),
+
+    Login(store),
 
     MainPage(store)
   ]
